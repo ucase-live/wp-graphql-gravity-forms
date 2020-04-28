@@ -4,6 +4,7 @@ namespace WPGraphQLGravityForms;
 
 use WPGraphQLGravityForms\Interfaces\Hookable;
 use WPGraphQLGravityForms\DataManipulators;
+use WPGraphQLGravityForms\Data;
 use WPGraphQLGravityForms\Types\Button\Button;
 use WPGraphQLGravityForms\Types\ConditionalLogic;
 use WPGraphQLGravityForms\Types\Enum;
@@ -41,6 +42,9 @@ final class WPGraphQLGravityForms {
 		$this->instances['form_data_manipulator']         = new DataManipulators\FormDataManipulator( $this->instances['fields_data_manipulator'] );
 		$this->instances['entry_data_manipulator']        = new DataManipulators\EntryDataManipulator();
 		$this->instances['draft_entry_data_manipulator']  = new DataManipulators\DraftEntryDataManipulator( $this->instances['entry_data_manipulator'] );
+
+		// Data loaders
+		$this->instances['loader_registrar'] = new Data\Loader\LoadersRegistrar();
 
 		// Buttons
 		$this->instances['button'] = new Button();
@@ -141,7 +145,8 @@ final class WPGraphQLGravityForms {
 		$this->instances['root_query_forms_connection']   = new Connections\RootQueryFormsConnection();
 
 		// Enums
-		$this->instances['form_status_enum'] = new Enum\FormStatusEnum();
+		$this->instances['form_status_enum']                  = new Enum\FormStatusEnum();
+		$this->instances['field_filters_operator_input_enum'] = new Enum\FieldFiltersOperatorInputEnum();
 
 		// Field errors
 		$this->instances['field_error'] = new FieldError();

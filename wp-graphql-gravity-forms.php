@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WPGraphQL for Gravity Forms
+ * Plugin Name: WPGraphQL for Gravity Forms - LOADERZ
  * Description: Provides a GraphQL API for interacting with Gravity Forms.
  * Version:     0.1.0
  * Author:      Harness Software, Kellen Mace
