@@ -3,6 +3,7 @@
 namespace WPGraphQLGravityForms\Connections;
 
 use GraphQL\Type\Definition\ResolveInfo;
+use GraphQL\Deferred;
 use WPGraphQL\AppContext;
 use WPGraphQLGravityForms\Interfaces\Hookable;
 use WPGraphQLGravityForms\Interfaces\Connection;
@@ -25,7 +26,7 @@ class FormFieldConnection implements Hookable, Connection {
             'fromType'      => Form::TYPE,
             'toType'        => ObjectFieldUnion::TYPE,
             'fromFieldName' => self::FROM_FIELD,
-            'resolve'       => function( array $root, array $args, AppContext $context, ResolveInfo $info ) : array {
+            'resolve'       => function( array $root, array $args, AppContext $context, ResolveInfo $info ) : Deferred {
                 return ( new FormFieldConnectionResolver( $root, $args, $context, $info ) )->get_connection();
             },
         ] );
