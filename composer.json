@@ -1,7 +1,7 @@
 {
-    "name": "harness-software/wp-graphql-gravity-forms",
+    "name": "ucase-live/wp-graphql-gravity-forms",
     "description": "WPGraphQL for Gravity Forms",
-    "type": "wordpress-plugin",
+    "type": "ucase-live",
     "license": "GPL-2.0",
     "authors": [
         {
