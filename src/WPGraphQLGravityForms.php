@@ -176,7 +176,10 @@ final class WPGraphQLGravityForms {
 		}
 	}
 
-	private function get_hookable_instances() {
-		return array_filter( $this->instances, fn( $instance ) => $instance instanceof Hookable );
-	}
+	private function get_hookable_instances()
+	    {
+		return array_filter($this->instances, function ($instance) {
+		    return $instance instanceof Hookable;
+		});
+	    }
 }
